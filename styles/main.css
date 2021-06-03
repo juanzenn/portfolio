@@ -1,0 +1,260 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  font-family: Inter, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.75rem;
+}
+
+p {
+  color: #535353;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #111827;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 0.5rem 0.85rem;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #f9fafb;
+  font-weight: bold;
+  letter-spacing: 0.03rem;
+  transition: all 200ms linear;
+}
+.btn:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #93c5fd;
+}
+
+.navbar_items_container {
+  z-index: 1010;
+  position: relative;
+  transition: transform 500ms ease-out;
+  background: #f9fafb;
+  box-shadow: 0 2px black 10px;
+}
+@media (max-width: 768px) {
+  .navbar_items_container {
+    transform: translateX(-110%);
+    width: 60%;
+    height: 100vh;
+    box-shadow: 1px 0 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.slide {
+  transform: translateX(0);
+}
+
+.navbar_items {
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.navbar_items a {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: all 150ms linear;
+}
+.navbar_items a:hover {
+  color: #f9fafb;
+  background: #2563eb;
+}
+@media (max-width: 768px) {
+  .navbar_items {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.open_menu {
+  visibility: hidden;
+  display: none;
+}
+@media (max-width: 768px) {
+  .open_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(245, 245, 245, 0.5);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.close_menu {
+  visibility: hidden;
+  display: none;
+}
+@media (max-width: 768px) {
+  .close_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    background: transparent;
+  }
+}
+
+.menu_btn {
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+.menu_btn:focus {
+  outline: none;
+}
+
+.menu_icon {
+  width: 24px;
+  height: 24px;
+}
+
+#header {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 576px) {
+  #header {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+  }
+}
+
+#header_image {
+  flex-shrink: 0;
+  background: #2563eb;
+  width: 50vw;
+  height: 450px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
+}
+@media (max-width: 576px) {
+  #header_image {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media (max-width: 768px) {
+  #header_image {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+#header_text {
+  display: grid;
+}
+#header_text p {
+  text-align: center;
+  font-size: 1.25rem;
+  margin: 1rem;
+}
+#header_text .call_to_action {
+  margin: 0 auto;
+  font-size: 2rem;
+}
+
+.title_highlight {
+  background: #2563eb;
+  color: #f9fafb;
+}
+
+#projects {
+  margin-top: 6rem;
+}
+
+.project_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.project_display {
+  flex-shrink: 0;
+  position: relative;
+  width: 60vw;
+  height: 70vh;
+  background: #4f46e5;
+}
+@media (max-width: 768px) {
+  .project_display {
+    width: 100%;
+    height: 70vh;
+  }
+}
+.project_display .project_desktop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: tomato;
+}
+.project_display .project_mobile {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background: turquoise;
+  right: -15px;
+  top: 5%;
+}
+
+/*# sourceMappingURL=main.css.map */
