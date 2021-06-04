@@ -9,6 +9,28 @@ html {
   font-family: Inter, sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.black-background {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  animation: background-change 200ms forwards;
+}
+
+@keyframes background-change {
+  from {
+    background: none;
+  }
+  to {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
 h1,
 h2,
 h3,
@@ -45,6 +67,7 @@ p {
 
 ul {
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -58,6 +81,7 @@ nav {
   top: 0;
   width: 100%;
   z-index: 1010;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
 }
 
 section {
@@ -144,8 +168,8 @@ section {
     align-items: center;
     visibility: visible;
     position: fixed;
-    top: 1rem;
-    right: 1rem;
+    top: 48px;
+    right: 24px;
     background: rgba(245, 245, 245, 0.5);
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
   }
@@ -399,40 +423,211 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 100px);
-  grid-template-areas: "about about basic" "about about basic" "frameworks backend hobbies" "frameworks backend .";
+  grid-template-areas: "about about basic" "about about basic" "frameworks backend hobbies" "frameworks backend hobbies";
   justify-content: center;
   gap: 1rem;
+}
+@media (max-width: 768px) {
+  .about_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 .about_grid > * {
   border-radius: 20px;
 }
 .about_grid .about {
   grid-area: about;
-  background: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 8px solid #2563eb;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+}
+.about_grid .about .about_me {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.about_grid .about .about_me ul {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #111827;
+}
+.about_grid .about .profile_pic {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #111827;
+}
+.about_grid .about .about_description {
+  width: 60%;
+}
+.about_grid .about .about_description p {
+  text-align: justify;
+}
+@media (max-width: 567px) {
+  .about_grid .about {
+    flex-direction: column;
+  }
+  .about_grid .about .about_description {
+    width: 100%;
+  }
+  .about_grid .about .about_description p {
+    padding-right: 0;
+  }
+}
+.about_grid .about_card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.about_grid .about_card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.about_grid .about_card ul li {
+  text-decoration: underline;
+  text-decoration-color: #2563eb;
 }
 .about_grid .basic {
   grid-area: basic;
-  background: #93c5fd;
+  border: 8px solid #93c5fd;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
   transform: rotate(12deg) translateY(0px) translateX(10px);
+}
+@media (max-width: 768px) {
+  .about_grid .basic {
+    transform: rotate(5deg);
+  }
 }
 .about_grid .frameworks {
   grid-area: frameworks;
-  background: #1e40af;
+  border: 8px solid #1e40af;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
   transform: rotate(-10deg) translateY(25px) translateX(-10px);
+}
+@media (max-width: 768px) {
+  .about_grid .frameworks {
+    transform: rotate(-5deg);
+  }
 }
 .about_grid .backend {
   grid-area: backend;
-  background: #4f46e5;
+  border: 8px solid #4f46e5;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
   transform: rotate(7deg) translateY(10px) translateX(10px);
+}
+@media (max-width: 768px) {
+  .about_grid .backend {
+    transform: rotate(5deg);
+  }
 }
 .about_grid .hobbies {
   grid-area: hobbies;
-  background: #111827;
-  transform: rotate(-10deg) translateY(50px) translateX(0px);
+  border: 8px solid #111827;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  transform: rotate(-10deg) translateY(50px) translateX(20px);
 }
-@media (max-width: 576px) {
-  .about_grid {
+@media (max-width: 768px) {
+  .about_grid .hobbies {
+    transform: rotate(-5deg);
+  }
+}
+
+#contact {
+  position: relative;
+  padding-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#contact p {
+  text-align: center;
+  width: 40%;
+}
+@media (max-width: 567px) {
+  #contact p {
     width: 100%;
+  }
+}
+#contact .contact_btn {
+  font-size: 2.5rem;
+}
+#contact ul {
+  display: flex;
+  gap: 1.5rem;
+}
+#contact ul li a {
+  transition: all 200ms linear;
+}
+#contact ul svg {
+  transition: all 200ms linear;
+}
+#contact ul li a:hover {
+  color: #2563eb;
+}
+#contact ul li a:hover svg {
+  transform: scale(1.2) translateY(-0.1rem);
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100vw;
+  height: 30vh;
+  background: #111827;
+  color: #f9fafb;
+}
+footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer .container a, footer .container p {
+  text-align: center;
+  color: #f9fafb;
+  transition: all 200ms linear;
+}
+footer .container a a:hover, footer .container p a:hover {
+  color: #93c5fd;
+}
+footer .container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+footer .container ul li a {
+  color: #f9fafb;
+  transition: all 200ms linear;
+}
+footer .container ul li a:hover {
+  color: #93c5fd;
+}
+footer #contact_image {
+  z-index: 1009;
+  position: absolute;
+  top: -30vh;
+  right: 0;
+  width: 40vw;
+  height: 50vh;
+}
+@media (max-width: 768px) {
+  footer #contact_image {
+    display: none;
   }
 }
 
