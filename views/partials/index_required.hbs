@@ -1,0 +1,30 @@
+<section id="required">
+  <h2>Making the perfect website requires</h2>
+
+  <div id="cards">
+    {{#each value}}
+      <div class="card">
+        <h5 class="card_title">
+          <span class="card_icon_container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="card_icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="{{this.icon}}"
+              ></path>
+            </svg>
+          </span>
+          {{this.title}}
+        </h5>
+        <p>{{this.content}}</p>
+      </div>
+    {{/each}}
+  </div>
+</section>
