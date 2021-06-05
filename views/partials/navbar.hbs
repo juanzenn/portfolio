@@ -1,3 +1,11 @@
+<style>
+  @media (max-width: 768px) {
+    .navbar {
+      height: 0;
+    }   
+  }
+</style>
+
 <nav class="navbar">
   <!-- Container for the mobile menu -->
   <div class="navbar_items_container">
@@ -44,7 +52,6 @@
 
 {{#section 'javascript'}}
   <script>
-    const body = document.body
     const blackBackground = document.getElementsByClassName("black-background")[0]
     const openButton = document.getElementsByClassName("open_menu")[0]
     const closeButton = document.getElementsByClassName("close_menu")[0]
