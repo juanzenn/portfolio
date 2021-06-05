@@ -1,0 +1,73 @@
+$dark: #111827;
+$light: #f9fafb;
+$primary: #2563eb;
+$primary-dark: #1e40af;
+$primary-light: #93c5fd;
+$accent: #4f46e5;
+$text: rgb(83, 83, 83);
+
+body {
+  margin: 0;
+}
+
+h1 {
+  color: $primary;
+  text-align: center;
+}
+
+.project_header {
+  display: flex;
+  gap: 1rem;
+}
+
+.project_header__image {
+  flex-shrink: 0;
+  width: 70%;
+  height: 80vh;
+  background-color: teal;
+}
+
+.project_header__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info_characteristics {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+
+  p {
+    font-weight: bold;
+  }
+
+  ul li {
+    color: $text;
+    margin-bottom: .25rem;
+  }
+  ul li strong {
+    color: $dark;
+  }
+}
+
+
+#project_brief {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 auto;
+  max-width: 700px;
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  
+}

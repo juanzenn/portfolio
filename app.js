@@ -52,4 +52,8 @@ app.get("/", (req, res) => {
   })
 })
 
+app.get("/project/project_id", (req, res) => {
+  res.render("project")
+})
+
 app.listen(port, () => console.log(`App listening to port ${port}`))
