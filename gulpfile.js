@@ -33,7 +33,7 @@ const compileJs = cb => {
 }
 
 const watchSass = cb => {
-  watch('./sass/*.scss', compileSass)
+  watch('./sass/*.scss', series(compileSass, uglifyCss))
   cb()
 }
 
