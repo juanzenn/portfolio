@@ -11,8 +11,7 @@
   display: none;
   animation: pop-up 500ms forwards; }
   #modal_container h2 {
-    color: #073569;
-    margin-bottom: 1rem; }
+    color: #073569; }
 
 #modal {
   z-index: 2000;
@@ -30,7 +29,10 @@
 .modal_header {
   position: relative; }
 
-.modal_header div {
+.modal_title {
+  margin-bottom: 1rem; }
+
+.modal_header .modal_close_icon {
   cursor: pointer;
   position: absolute;
   top: 1rem;

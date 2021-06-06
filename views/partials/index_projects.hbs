@@ -1,10 +1,9 @@
 <section id="projects">
   <div class="container projects_headers">
-    <h2>Lastes project</h2>
-    <p>Multiple brands have put their trust in my work. I also create projects
-      on my own to perfect my skills.
+    <h2>{{content.sectionTitle}}</h2>
+    <p>{{content.titleHelper}}
     </p>
-    <a href="index.html">All my projects</a>
+    <a href="index.html">{{cotent.callToAction}}</a>
   </div>
 
   <article class="container project_container">
@@ -23,9 +22,9 @@
         /></div>
     </div>
     <div class="project_information">
-      <h3>LABPCVE</h3>
-      <p>LAVPCVE is a brand that works building gaming computers for all Venezuela. They are the very best company with a "PC Builder" on the web. <br> This project was made in React with NextJS, using Tailwind for the styles.</p>
-      <button class="btn">Learn more</button>
+      <h3>{{content.projectTitle}}</h3>
+      <p>{{content.projectDescription}}</p>
+      <button class="btn">{{content.projectButton}}</button>
     </div>
   </article>
 </section>

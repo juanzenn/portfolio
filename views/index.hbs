@@ -6,17 +6,17 @@
 
 <body>    
 
-  {{>index_header}}
+  {{>index_header content=content.header}}
 
-  {{>index_projects}}
+  {{>index_projects content=content.project}}
 
-  {{>index_phrase}}
+  {{>index_phrase content=content.phrase}}
 
-  {{>index_required value=value}}
+  {{>index_required value=content.required.values}}
 
-  {{>index_about}}
+  {{>index_about content=content.about}}
 
-  {{>index_contact}}    
+  {{>index_contact content=content.contact}}    
 
   <footer>
     {{>footer}}
