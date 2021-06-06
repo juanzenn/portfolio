@@ -14,6 +14,10 @@ const openMenu = () => {
 }
 
 const closeMenu = () => {
+  if (window.innerWidth > 768) {
+    return
+  }
+  
   openButton.style.display = "block"
   body.style.overflowY = "auto"
   blackBackground.classList.remove("background-change")

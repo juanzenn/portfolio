@@ -1,46 +1,49 @@
-const gulp = require('gulp')
-const {series, watch, parallel} = require('gulp')
-const sass = require('gulp-sass')
-const uglifycss = require('gulp-uglifycss')
-const uglify = require('gulp-uglify')
-const pipeline = require('readable-stream').pipeline
+const gulp = require("gulp")
+const { series, watch } = require("gulp")
+const sass = require("gulp-sass")
+const uglifycss = require("gulp-uglifycss")
+const uglify = require("gulp-uglify")
+const pipeline = require("readable-stream").pipeline
+const browserSync = require("browser-sync").create()
 
-sass.compiler = require('node-sass')
+sass.compiler = require("node-sass")
 
-const compileSass = cb => {
-  gulp.src('./sass/*.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(gulp.dest('./public/styles'))
-  cb()
+const compileSass = () => {
+  return gulp
+    .src("./sass/*.scss")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(gulp.dest("./public/styles"))
 }
 
-const uglifyCss = cb => {
-  gulp.src('./public/styles/*.css')
-  .pipe(uglifycss({
-    "uglyComments": true
-  }))
-  .pipe(gulp.dest('./public/dist'))
-  cb()
+const uglifyCss = () => {
+  return gulp
+    .src("./public/styles/*.css")
+    .pipe(
+      uglifycss({
+        uglyComments: true,
+      })
+    )
+    .pipe(gulp.dest("./public/dist"))
+    .pipe(browserSync.stream())
 }
 
-const compileJs = cb => {
-  pipeline(
-    gulp.src('./scripts/*.js'),
+const compileJs = () => {
+  return pipeline(
+    gulp.src("./scripts/*.js"),
     uglify(),
-    gulp.dest('./public/dist')    
-  )
-  cb()
+    gulp.dest("./public/dist")
+  ).pipe(browserSync.stream())
 }
 
-const watchSass = cb => {
-  watch('./sass/*.scss', series(compileSass, uglifyCss))
-  cb()
+const watcher = () => {
+  browserSync.init({
+    proxy: "localhost:3000",
+    port: "3030"
+  })
+  gulp.watch("./sass/*.scss", series(compileSass, uglifyCss))
+  gulp.watch("./scripts/*.js", compileJs)
+  gulp.watch("./views/**/*.hbs").on("change", browserSync.reload)
 }
 
-const watchJs = cb => {
-  watch('./scripts/*.js', compileJs)
-  cb()
-}
-
+exports.watch = watcher
 exports.build = series(compileSass, uglifyCss, compileJs)
-exports.default = series(compileSass, uglifyCss, compileJs, parallel(watchSass, watchJs))

@@ -32,7 +32,7 @@
   padding: 1rem;
 }
 
-.modal_header {
+.modal_header { 
   position: relative;
 }
 
@@ -43,7 +43,7 @@
 .modal_header .modal_close_icon {
   cursor: pointer;
   position: absolute;
-  top: 1rem;
+  top: 24px;
   right: 1rem;
 }
 
@@ -68,6 +68,10 @@ form {
   flex-direction: column;
   align-items: flex-end;
   gap: 1rem;
+}
+
+.form_inputs {
+  width: 60%;
 }
 
 .form_control {
@@ -100,17 +104,16 @@ form {
 
 .form_control input:hover,
 .form_control textarea:hover {
-  box-shadow: 0 0 0 1px #93c5fd;
+  box-shadow: 0 0 0 1px #93C5Fd;
 }
 
 .form_control input:focus,
 .form_control textarea:focus {
-  box-shadow: 0 0 0 2px #93c5fd, 0 3px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0 2px #93c5fd;
 }
 
 .form_control textarea {
-  resize: none;
-  width: 35vw;
+  resize: none;  
   height: 250px;
 }
 
@@ -118,8 +121,16 @@ button {
   width: fit-content;
 }
 
-@media (max-width: 576px) {
-  form {
+#form_sider {
+  height: 24rem;
+}
+
+@media (max-width: 768px) {
+  .contact_container {
+    display: block;
+  }
+
+  form {    
     gap: .5rem;
   }
 
@@ -127,9 +138,17 @@ button {
     display: none;
   }
 
+  .form_inputs {
+    width: 100%;
+  }
+
   .form_control textarea {
     width: 100%;
   }
+}
+
+.contact_image {
+  height: 100%;
 }
 
 @keyframes pop-up {

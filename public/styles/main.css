@@ -437,10 +437,23 @@ section {
   position: relative;
   padding-top: 6rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 1rem; }
+  align-items: center; }
+  #contact #contact_image {
+    width: 100%;
+    height: 100%; }
+  #contact .contact_image {
+    width: 50vw;
+    height: 500px; }
+    @media (max-width: 768px) {
+      #contact .contact_image {
+        display: none; } }
+  #contact .contact_message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; }
   #contact p {
     text-align: center;
     width: 40%; }
@@ -464,7 +477,6 @@ section {
 
 footer {
   position: relative;
-  bottom: 0;
   width: 100vw;
   height: 30vh;
   background: #111827;
@@ -488,13 +500,3 @@ footer {
       transition: all 200ms linear; }
       footer .container ul li a:hover {
         color: #93c5fd; }
-  footer #contact_image {
-    z-index: 1009;
-    position: absolute;
-    top: -30vh;
-    right: 0;
-    width: 40vw;
-    height: 50vh; }
-    @media (max-width: 768px) {
-      footer #contact_image {
-        display: none; } }
