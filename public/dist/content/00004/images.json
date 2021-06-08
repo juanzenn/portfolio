@@ -1,0 +1,26 @@
+[
+  {
+    "key": 0,
+    "url": "url(/dist/image1.webp)"
+  },
+  {
+    "key": 1,
+    "url": "url(/dist/image2.webp)"
+  },
+  {
+    "key": 2,
+    "url": "url(/dist/image3.webp)"
+  },
+  {
+    "key": 3,
+    "url": "url(/dist/image4.webp)"
+  },
+  {
+    "key": 4,
+    "url": "url(/dist/image5.webp)"
+  },
+  {
+    "key": 5,
+    "url": "url(/dist/image6.webp)"
+  }
+]

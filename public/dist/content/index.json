@@ -7,12 +7,12 @@
     "callToAction": "Work with me"
   },
   "project": {
-    "sectionTitle": "Lastes project",
+    "sectionTitle": "Latest project",
     "titleHelper": "Multiple brands have put their trust in my work. I also create projects on my own to perfect my skills.",
     "callToAction": "All my projects",
     "projectTitle": "LABPCVE",
     "projectDescription": "LAVPCVE is a brand that works building gaming computers for all Venezuela. They are the very best company with a \"PC Builder\" on the web. This project was made in React with NextJS, using Tailwind for the styles.",
-    "projectButton": "Learn more"
+    "projectButton": "More"
   },
   "phrase": {
     "content": "Every project is different and requires precise attention to the brand identity and goals."
