@@ -3,8 +3,10 @@ const { series, watch } = require("gulp")
 const sass = require("gulp-sass")
 const uglifycss = require("gulp-uglifycss")
 const uglify = require("gulp-uglify")
+const webp = require("gulp-webp")
 const pipeline = require("readable-stream").pipeline
 const browserSync = require("browser-sync").create()
+
 
 sass.compiler = require("node-sass")
 
@@ -35,6 +37,12 @@ const compileJs = () => {
   ).pipe(browserSync.stream())
 }
 
+const imagetoWebp = () => {
+  return gulp.src(['./public/images/*.png', './public/images/*.jpg'])
+  .pipe(webp())
+  .pipe(gulp.dest('./public/dist'))
+}
+
 const watcher = () => {
   browserSync.init({
     proxy: "localhost:3000",
@@ -46,4 +54,4 @@ const watcher = () => {
 }
 
 exports.watch = watcher
-exports.build = series(compileSass, uglifyCss, compileJs)
+exports.build = series(compileSass, uglifyCss, compileJs, imagetoWebp)
