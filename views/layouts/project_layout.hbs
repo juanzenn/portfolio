@@ -7,19 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dist/main.css">
-  <link rel="stylesheet" href="dist/navbar.css">
-  <link rel="stylesheet" href="dist/contact_form.css">
+  <link rel="stylesheet" href="/dist/main.css">
+  <link rel="stylesheet" href="/dist/project_view.css">
   {{{_sections.head}}}  
 </head>
 <body>
   <main>
-    {{>navbar}}
-
+    <nav class="breadcrumbs">
+      <ul>
+        <li><a href="/">Home /</a></li>
+        <li><a href='/project/{{project_title}}'>{{project_title}}</a></li>
+      </ul>
+    </nav>    
+    
     {{{body}}}
 
-    <script src="dist/navbar.js"></script>
-    <script src="dist/contact_form_modal.js"></script>
+    <script src="/dist/project_showcase.js"></script>
+
   </main>
 </body>
 </html>

@@ -9,13 +9,13 @@
   <article class="container project_container">
     <div class="project_display">
       <div class="project_desktop"><img
-          src="images/header_image.webp"
+          src="dist/pclab_desktop.webp"
           alt="A example of my website development job"
           width="100%"
           height="100%"
         /></div>
       <div class="project_mobile"><img
-          src="images/header_image.webp"
+          src="dist/pclab_mobile.webp"
           alt="A example of my website development job"
           width="100%"
           height="100%"
@@ -24,7 +24,32 @@
     <div class="project_information">
       <h3>{{content.projectTitle}}</h3>
       <p>{{content.projectDescription}}</p>
-      <button class="btn">{{content.projectButton}}</button>
+      <a href="/project/00001" class="btn">{{content.projectButton}}</a>
     </div>
   </article>
+
+  <div class="container other-projects">
+    <h4>Other projects</h4>
+    <div class="projects-container">
+      <a href="/project/00002" class="other-project--item">
+        <img src="dist/project1.webp" alt="" width="100%" height="100%" />
+        <div class="item-tooltip">
+          <p>Project A</p>
+        </div>
+      </a>
+      <a href="/project/00003" class="other-project--item">
+        <img src="dist/project2.webp" alt="" width="100%" height="100%" />
+        <div class="item-tooltip">
+          <p>Project B</p>
+        </div>
+      </a>
+      <a href="/project/00004" class="other-project--item">
+        <img src="dist/project3.webp" alt="" width="100%" height="100%" />
+        <div class="item-tooltip">
+          <p>Project C</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
 </section>

@@ -1,0 +1,25 @@
+<head>  
+  {{#section 'head'}}  
+  <title>{{project_title}} - Juan Alvarez</title>  
+  {{/section}}
+</head>  
+
+<section class="container">   
+  <h1 style="margin-bottom: .5em;">{{title}}</h1>
+  <div class="image_showdown">
+    <div class="image_showdown--main">
+      {{#each images}}
+        <div class="main-image" data-index="{{this.key}}" style="--background: {{this.url}}"></div>
+      {{/each}}        
+    </div>
+    <div class="image_showdown--images">
+      {{#each images}}
+        <div class="image" data-index="{{this.key}}" style="--background: {{this.url}}"></div>
+      {{/each}}   
+    </div>
+  </div>
+</section>
+
+<section id="content-container" class="container">
+  {{{content}}}
+</section>
